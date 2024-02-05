@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Model
+{% endblock %}
+
+{% block content %}
+    <!-- <h1 class="text-5xl font-semibold my-10 text-center">Jenis-Jenis Koeng Dalam Habitat Endemik Schistosomiasis</h1> -->
+
+<div class="flex flex-col justify-center py-10 m-10">
+    <div class="self-end text-slate-900 tracking-tighter flex mb-10 gap-10 justify-center items-center">
+        <img class="h-100 w-2/5 rounded-xl object-cover shadow-lg hover:shadow duration-150 shadow-black/40" src="http://127.0.0.1:5000/static/src/who.jpg">
+        <div class="w-2/5 ">
+            <p class="text-5xl font-bold text-center text-blue-500/80 tracking-wide">World Health Organization</p>            
+            <h1 class="text-3xl text-justify mb-2 rounded-lg p-2 10 ml-3 leading-relaxed text-blue-400"><span class="italic border-b-4 border-cyan-300">Schistosomiasis</span> masuk dalam laporan <span class="italic border-b-4 border-cyan-300">WHO</span> sebagai <span class="italic border-b-4 border-cyan-300">Neglected Tropical Disease</span> atau Penyakit tropis yang terabaikan. Tahun 2016 <span class="italic">schistosomiasis</span> menyebabkan 24.000 kematian</h1>
+        </div>        
+    </div>
+    <div class="mb-5 text-slate-900 group text-justify tracking-tight flex gap-10 justify-center items-center">
+        <div class="w-2/5">
+            <p class="text-5xl font-bold text-blue-500/80"><span class="hover:text-fuchsia-300 duration-200">Kementerian</span> <span class="hover:text-fuchsia-300 duration-200">Kesehatan</span> <span class="hover:text-fuchsia-300 duration-200">RI</span></p>
+            <h1 class="text-3xl mb-2 rounded-lg duration-500 leading-relaxed p-2 text-blue-400">
+                <span class="italic border-b-4 border-cyan-300 hover:text-fuchsia-300 duration-200">Schistosomiasis</span>
+                <span class="italic border-b-4 border-cyan-300 hover:text-fuchsia-300 duration-200">di</span> Indonesia disebabkan oleh cacing <span class="italic border-b-4 border-cyan-300">Schistosoma japonicum</span> dengan hospes perantara keong <span class="italic border-b-4 border-cyan-300">Oncomelania hupensis lindoensis</span></h1>
+        </div>
+        <img class="h-96 w-1/3 rounded-xl object-cover shadow-lg hover:shadow duration-150 shadow-black/40 self-center" src="http://127.0.0.1:5000/static/src/kemenkes.png">
+    </div>
+    
+    <div class="flex min-h-full flex-col py-5 bg-blue-100">
+        <h1 class="text-center text-5xl font-semibold text-slate-500 mb-5">Keong-Keong Dalam Wilayah Endemik Schistosomiasis</h1>
+        <div class="flex flex-wrap gap-10 justify-center">
+            <div class="group h-96 w-96 [perspective:1000px]">
+                <div class="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                    <div class="absolute inset-0">
+                        <img class="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40" src="http://127.0.0.1:5000/static/Keong/O.H.lindoensis.jpg">
+                    </div>
+                    <div class="absolute inset-0 h-full w-full rounded-xl bg-black/40 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                        <div class="flex min-h-full flex-col items-center justify-center">
+                            <h1 class="text3xl font-bold">Oncomelania hupensis lindoensis</h1>
+                            <p class="text-lg">Perantara schistosomiasis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group h-96 w-96 [perspective:1000px]">
+                <div class="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                    <div class="absolute inset-0">
+                        <img class="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40" src="http://127.0.0.1:5000/static/Keong/sulawesidrobia.jpg">
+                    </div>
+                    <div class="absolute inset-0 h-full w-full rounded-xl bg-black/40 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                        <div class="flex min-h-full flex-col items-center justify-center">
+                            <h1 class="text3xl font-bold">Sulawesidrobia</h1>
+                            <!-- <p class="text-lg">Berada di wilayah endemik schistosomiasis</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group h-96 w-96 [perspective:1000px]">
+                <div class="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                    <div class="absolute inset-0">
+                        <img class="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40" src="http://127.0.0.1:5000/static/Keong/brothia.jpg">
+                    </div>
+                    <div class="absolute inset-0 h-full w-full rounded-xl bg-black/40 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                        <div class="flex min-h-full flex-col items-center justify-center">
+                            <h1 class="text3xl font-bold">Brothia sp</h1>
+                            <!-- <p class="text-lg">Berada di wilayah endemik schistosomiasis</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group h-96 w-96 [perspective:1000px]">
+                <div class="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                    <div class="absolute inset-0">
+                        <img class="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40" src="http://127.0.0.1:5000/static/Keong/thiara.jpg">
+                    </div>
+                    <div class="absolute inset-0 h-full w-full rounded-xl bg-black/40 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                        <div class="flex min-h-full flex-col items-center justify-center">
+                            <h1 class="text3xl font-bold">Thiara sp</h1>
+                            <!-- <p class="text-lg">Berada di wilayah endemik schistosomiasis</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        perjalanan
+        <p>brug tesccg </p>
+
+    </div>
+    
+    
+
+    
+</div>
+
+<script>
+        // set the default active slide to the first one
+        let slideIndex = 1;
+        showSlide(slideIndex);
+
+        // change slide with the prev/next button
+        function moveSlide(moveStep) {
+            showSlide(slideIndex += moveStep);
+        }
+
+        // change slide with the dots
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+
+        function showSlide(n) {
+            let i;
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName('dot');
+            
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+
+            // hide all slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.add('hidden');
+            }
+
+            // remove active status from all dots
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove('bg-yellow-500');
+                dots[i].classList.add('bg-green-600');
+            }
+
+            // show the active slide
+            slides[slideIndex - 1].classList.remove('hidden');
+
+            // highlight the active dot
+            dots[slideIndex - 1].classList.remove('bg-green-600');
+            dots[slideIndex - 1].classList.add('bg-yellow-500');
+        }
+    </script>
+
+
+{% endblock %}

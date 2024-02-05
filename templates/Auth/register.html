@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Model
+{% endblock %}
+
+{% block content %}
+<div>
+    <h1>Register</h1>
+    <div>
+        <form action="{{ url_for('AuthRoutes.register') }}" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="nama">Masukkan nama</label>
+                <input type="text" name="nama" placeholder="..." id="">
+            </div>
+            <div>
+                <label for="nama">Masukkan password</label>
+                <input type="text" name="password" placeholder="..." id="">
+            </div>
+            <input type="submit" value="register" name="" id="">
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
