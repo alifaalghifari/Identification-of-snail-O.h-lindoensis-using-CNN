@@ -6,11 +6,11 @@ import numpy as np
 import tflite
 from PIL import Image
 
-def detect(filename):
-    path = os.path.join('static', filename)
+def detect(folder, filename):
+    path = os.path.join('uploads', folder, filename)
 
-    TF_MODEL_FILE_PATH = 'helpers/model_4_Data_300.tflite' # The default path to the saved TensorFlow Lite model
-    class_names = open('helpers/class_names.txt', "r").read().split('\n')
+    TF_MODEL_FILE_PATH = 'helpers/model_detection/model_4_Data_300.tflite' # The default path to the saved TensorFlow Lite model
+    class_names = open('helpers/model_detection/class_names.txt', "r").read().split('\n')
     interpreter = tf.lite.Interpreter(model_path=TF_MODEL_FILE_PATH)
     # return interpreter.get_signature_list()
     classify_lite = interpreter.get_signature_runner('serving_default')
@@ -31,7 +31,3 @@ def detect(filename):
     score = tf.nn.softmax(predictions)
 
     return class_names[np.argmax(score)], 100 * np.max(score)
-    # print(
-    # "This image most likely belongs to {} with a {:.2f} percent confidence."
-    # .format(class_names[np.argmax(score)], 100 * np.max(score))
-    # )

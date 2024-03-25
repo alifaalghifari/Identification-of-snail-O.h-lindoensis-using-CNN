@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+    Hasil Prediksi
+{% endblock %}
+
+{% block content %}
+
+<div class="flex gap-3 w-full  mt-5 p-4">
+    <!-- <div class="max-w-md mx-auto mt-8"> -->
+    {% for item in data %}
+        <div class="bg-white shadow-md rounded-lg h-full ">
+            <!-- Image -->
+            <img src="{{ url_for('ModelRoutes.get_file', folder=folder, filename=item[2]) }}" alt="Example Image" class="w-full h-64 object-cover">
+       
+            <div class="p-3">
+                <h2 class="text-xl font-semibold mb-2">{{item[3]}}</h2>
+                <p class="text-gray-700">{{item[4]}} %</p>
+            </div>
+            
+            <form action="{{ url_for('HasilRoutes.delete_file', filename=item[2]) }}" method="post" class="flex w-full items-end justify-end">
+                <button type="submit" class="p-3 bg-red-400 text-white rounded-lg m-2">Hapus</button>
+            </form>
+
+        </div>
+    {% endfor %}
+    <!-- </div> -->
+</div>
+
+{% endblock %}

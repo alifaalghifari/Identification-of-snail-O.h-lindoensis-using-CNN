@@ -1,0 +1,11 @@
+    <div class="w-1/6 h-screen fixed flex justify-center border-r mt-16 py-5">
+        <ul class="flex flex-col gap-10 text-2xl">
+            <a href="{{ url_for('BerandaRoutes.show_penjelasan')}}" class="bg-blue-300 p-2 text-slate-100 rounded-lg cursor-pointer {% if (url_for(request.endpoint, **request.view_args) == '/')%} bg-blue-500 {%endif%}"><li class="">Beranda</li></a>
+            <a href="{{ url_for('DataRoutes.show_data')}}" class="bg-blue-300 p-2 text-slate-100 rounded-lg  cursor-pointer{% if (url_for(request.endpoint, **request.view_args) == '/data')%} bg-blue-500 {%endif%}"><li class="">Data Terbaru</li></a>
+            <a href="{{ url_for('ModelRoutes.show_model')}}" class="bg-blue-300 p-2 text-slate-100 rounded-lg  cursor-pointer{% if (url_for(request.endpoint, **request.view_args) == '/model')%} bg-blue-500 {%endif%}"><li>Model Deteksi</li></a>
+            <a href="{{ url_for('HasilRoutes.show_data')}}" class="bg-blue-300 p-2 text-slate-100 rounded-lg  cursor-pointer{% if (url_for(request.endpoint, **request.view_args) == '/hasil')%} bg-blue-500 {%endif%}"><li>Hasil Deteksi</li></a>
+            {% if session.is_admin %}
+            <a href="{{ url_for('KepadatanRoutes.show_kepadatan')}}" class="bg-blue-300 p-2 text-slate-100 rounded-lg  cursor-pointer{% if (url_for(request.endpoint, **request.view_args) == '/kepadatan')%} bg-blue-500 {%endif%}"><li>Menghitung Kepadatan</li></a>
+            {% endif %}
+        </ul>
+    </div>

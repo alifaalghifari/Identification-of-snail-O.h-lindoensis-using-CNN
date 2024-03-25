@@ -1,26 +1,37 @@
-from config.configuration import Configuration
-# from config import configuration, http
-# from flask import Flask
-# from flask_mysqldb import MySQL
+from flask import jsonify
 from helpers.connecttion import db
-from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 
 class AuthController(object):
     def __init__(self):
         pass
-    def register(self,nama,password):
+    def register(self,username,password,email):
+        password = generate_password_hash(password, method='sha256')
+        try:
+            cursor = db.connection.cursor()
+
+            cursor.execute("""INSERT INTO tbl_user VALUES(DEFAULT, %s, %s, %s, DEFAULT)""", (username, password, email))
+
+            db.connection.commit()
+            cursor.close()
+
+            return {'message': 'success'}
+        except Exception as e:
+            return {'message' : 'Username atau Email sudah terpakai'}
+    
+    def login(self, username, password):
         cursor = db.connection.cursor()
 
-        now = datetime.now()
-        id_gambar = nama + "_"  + str(now)
-        print(id_gambar)
-        password = generate_password_hash(password, method='sha256')
-        
-        regis = cursor.execute("""INSERT INTO tbl_user VALUES(DEFAULT, %s, %s, %s)""", (nama, password,id_gambar))
+        cursor.execute("""SELECT * FROM tbl_user WHERE nama=(%s)""", (username,))
 
-        db.connection.commit()
-        cursor.close()
-        return regis
-    
-    
+        get_user = cursor.fetchall()
+
+        # CHECK IF USER EXIST
+        if len(get_user) == 0:
+            return {'message' : 'Akun tidak ditemukan'}
+        
+        # CHECK IF PASSWORD IS SAME
+        if check_password_hash(get_user[0][2],password):
+            return {'message': 'success', 'data' : get_user}
+        else:
+            return {'message' : 'Password salah'}

@@ -1,0 +1,21 @@
+<nav class="bg-gray-50 p-4 fixed w-screen top-0 left-0 mb-16 z-10">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <div class="text-blue-400 font-bold">
+            Logo
+        </div>
+
+        <!-- Navbar items -->
+        <ul class="flex space-x-4">
+            <li class="text-blue-400">
+                Welcome, <span class="font-bold">{{ session.username }}</span> <!-- Replace with session information -->
+            </li>
+            <li>
+                <!-- Logout button -->
+                <form action="/logout" method="post">
+                    <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
