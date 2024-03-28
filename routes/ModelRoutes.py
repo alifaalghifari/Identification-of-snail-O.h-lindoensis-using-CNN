@@ -45,16 +45,19 @@ def show_model():
                                 return render_template('menu/model.html')
                         
                         # DETECT IMAGE
-                        class_name, score= detect.detect(folder=data_save['folder'], filename=data_save['filename'])
-
+                        data_detect= detect.detect_lite(folder=data_save['folder'], filename=data_save['filename'])
+                        
+                        # return data_detect
+                        
+                                # return redirect(url_for('BerandaRoutes.show_penjelasan'))
                         # SAVE TO DB
                         user = session.get('username')
-                        saving_file = controller.save_file(user, data_save['filename'], class_name, score)
+                        saving_file = controller.save_file(user, data_save['filename'], data_detect['class name'], data_detect['score'])
 
                         if(saving_file['message'] == 'success'):
                                 flash('File berhasil di klasifikasi !')
                         # mengembalikan laman model.html dengan nama kelas hasil deteksi
-                        return render_template('menu/model.html', class_name=class_name, folder=data_save['folder'], filename=data_save['filename'], score=round(score,2))
+                        return render_template('menu/model.html', class_name=data_detect['class name'], folder=data_save['folder'], filename=data_save['filename'], score=round(data_detect['score'],2))
                 
                 flash('File yang dimasukkan salah')
                 return redirect(request.url)
